@@ -1,21 +1,37 @@
 import React, {useState, useEffect} from "react"
+import logo from './logo.svg';
 
-const counter = () => {
-    const [count, setCount] = useState(0)
+const Counter = () => {
+  const [countOne, setCountOne] = useState(0)
+  const [countTwo, setCountTwo] = useState(0)
 
-  const handleclick = () => {
-    setCount (count + 1)
+  const incrementCountOne = () => {
+    setCountOne (countOne + 1)
+    console.log("incrementa el contador 1")
   }
 
-  const decrementclick = () => {
-    if (count > 0){
-      setCount (count-1)
+  const decrementCountOne = () => {
+    if (countOne > 0){
+      setCountOne (countOne-1)
+      console.log("decrementa el contador 1")
     }
   }
 
-  useEffect(() => {
+  const incrementCountTwo = () => {
+    setCountTwo (countTwo + 1)
+    console.log("incrementa el contador 2")
+  }
+
+  const decrementCountTwo = () => {
+    if (countTwo > 0){
+      setCountTwo (countTwo-1)
+      console.log("decrementa el contador 2")
+    }
+  }
+
+  /*useEffect(() => {
       console.log('se ejecuta use effect')
-  }, [count])
+  }, [countOne])*/
   
 
   return (
@@ -25,15 +41,19 @@ const counter = () => {
         <p>
           Edit <code>hola</code> and save to reload.
         </p>
-        <button onClick={handleclick}>+</button>
-        <div>usted hizo click {count} veces</div>
-        <button onClick={decrementclick}>-</button>
-        <button onClick={handleclick}>+</button>
-        <div>usted hizo click {count} veces</div>
-        <button onClick={decrementclick}>-</button>
+        <div>
+          <button onClick={incrementCountOne}>+</button>
+          <div>usted hizo click {countOne} veces</div>
+          <button onClick={decrementCountOne}>-</button>
+        </div>
+        <div>
+          <button onClick={incrementCountTwo}>+</button>
+          <div>usted hizo click {countTwo} veces</div>
+          <button onClick={decrementCountTwo}>-</button>
+        </div>
       </header>
     </div>
   );
 }
 
-export default counter
+export default Counter
