@@ -31,8 +31,15 @@
 .divcounter {
   float:left;
   overflow: hidden;
-  padding: 50px;
+  padding: 1px;
+  image-resolution: 20px;
 }
+
+
+.club {
+  width: 70px;
+  height: 70px;
+ }
 
 @keyframes App-logo-spin {
   from {
@@ -42,3 +49,4 @@
     transform: rotate(360deg);
   }
 }
+
